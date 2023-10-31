@@ -88,7 +88,7 @@ function generateNotification(param) {
     }
 
     if (origin) {
-        notification['origin'] = actor; 
+        notification['origin'] = origin; 
     }
 
     if (context) {

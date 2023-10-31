@@ -1,0 +1,27 @@
+---
+$:
+  - overlay
+  - repository
+id: urn:uuid:1-1
+type:
+  - Announce
+  - coar-notify:ReviewAction
+actor: https://overlay-journal.com
+origin: https://overlay-journal.com/system
+context: https://research-organisation.org/repository/preprint/201203/421/
+object: https://overlay-journal.com/reviews/000001/00001
+target: https://research-organisation.org
+...
+$:
+  - overlay
+  - repository
+id: urn:uuid:1-2
+type:
+  - Announce
+  - coar-notify:EndorsementAction
+actor: https://overlay-journal.com
+origin: https://overlay-journal.com/system
+context: https://research-organisation.org/repository/preprint/201203/421/
+object: https://overlay-journal.com/articles/00001/
+target: https://research-organisation.org
+...

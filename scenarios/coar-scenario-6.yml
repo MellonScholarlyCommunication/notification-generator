@@ -2,19 +2,19 @@
 $: 
   - overlay
   - repository
-id: urn:uuid:1
+id: urn:uuid:6-1
 type: 
   - Offer
   - coar-notify:IngestAction
 actor: https://overlay-journal.com
 origin: https://overlay-journal.com/system
 object: https://overlay-journal.com/submissions/00001/
-target: https://research-organisation.org/repository
+target: https://research-organisation.org
 ...
 $: 
   - overlay
   - repository
-id: urn:uuid:2
+id: urn:uuid:6-2
 type: 
   - Announce
   - coar-notify:IngestAction
@@ -28,7 +28,7 @@ target: https://overlay-journal.com
 $: 
   - overlay
   - repository
-id: urn:uuid:3
+id: urn:uuid:6-3
 type:
   - Announce
   - coar-notify:ReviewAction
@@ -41,7 +41,7 @@ target: https://overlay-journal.com
 $: 
   - overlay
   - repository
-id: urn:uuid:4
+id: urn:uuid:6-4
 type:
   - Announce
   - coar-notify:EndorsementAction
