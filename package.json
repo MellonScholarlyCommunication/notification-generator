@@ -1,0 +1,15 @@
+{
+  "name": "notification-generator",
+  "version": "1.0.0",
+  "description": "A simple Event Notification generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "uuid": "^9.0.1",
+    "yaml": "^2.3.3"
+  }
+}

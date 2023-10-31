@@ -1,0 +1,12 @@
+{
+    "id": "https://overlay-journal.com/submissions/00001/",
+    "type": "sorg:AboutPage",
+    "url": {
+      "id": "https://overlay-journal.com/submissions/00001/files/content.pdf",
+      "mediaType": "application/pdf",
+      "type": [
+        "Article",
+        "sorg:ScholarlyArticle"
+      ]
+    }
+}

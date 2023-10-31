@@ -1,0 +1,6 @@
+{
+    "id" : "https://overlay-journal.com/system",
+    "name": "Overlay Journal System",
+    "inbox": "https://overlay-journal.com/inbox/",
+    "type": "Service"
+}
