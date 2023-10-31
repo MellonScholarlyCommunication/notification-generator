@@ -20,17 +20,20 @@ scenario.forEach( (scene) => {
     const notification = generateNotification(sceneJS);
 
     if (outputDir) {
+        let dirs = ['data','service'];
+
         if (sceneJS['$']) {
-            if (! fs.existsSync(`${outputDir}/${sceneJS['$']}`)) {
-                fs.mkdirSync(`${outputDir}/${sceneJS['$']}`);
-            }
-            const id = notification['id'];
-            fs.writeFileSync(`${outputDir}/${sceneJS['$']}/${id}.jsonld`, JSON.stringify(notification,null,2));
+            dirs = sceneJS['$'] instanceof Array ? sceneJS['$'] : [sceneJS['$']]; 
         }
-        else {
+
+        dirs.forEach( (subdir) => {
+            if (! fs.existsSync(`${outputDir}/${subdir}`)) {
+                fs.mkdirSync(`${outputDir}/${subdir}`);
+            } 
             const id = notification['id'];
-            fs.writeFileSync(`${outputDir}/${id}.jsonld`, JSON.stringify(notification,null,2));
-        }
+            console.error(`generating ${outputDir}/${subdir}/${id}.jsonld`);
+            fs.writeFileSync(`${outputDir}/${subdir}/${id}.jsonld`, JSON.stringify(notification,null,2));
+        });
     }
     else {
         console.log(JSON.stringify(notification,null,2));
@@ -112,7 +115,7 @@ function resolveAgent(id) {
         return undefined;
     }
     return agents.find( (elm) => {
-        return elm['id'] = id;
+        return elm['id'] == id;
     });
 }
 

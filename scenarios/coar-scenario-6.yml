@@ -1,0 +1,53 @@
+---
+$: 
+  - overlay
+  - repository
+id: urn:uuid:1
+type: 
+  - Offer
+  - coar-notify:IngestAction
+actor: https://overlay-journal.com
+origin: https://overlay-journal.com/system
+object: https://overlay-journal.com/submissions/00001/
+target: https://research-organisation.org/repository
+...
+$: 
+  - overlay
+  - repository
+id: urn:uuid:2
+type: 
+  - Announce
+  - coar-notify:IngestAction
+actor: https://research-organisation.org
+origin: https://research-organisation.org/system
+context: https://overlay-journal.com/submissions/00001/
+inReplyTo: urn:uuid:1
+object: https://research-organisation.org/repository/preprint/201203/421/
+target: https://overlay-journal.com
+...
+$: 
+  - overlay
+  - repository
+id: urn:uuid:3
+type:
+  - Announce
+  - coar-notify:ReviewAction
+actor: https://research-organisation.org
+origin: https://research-organisation.org/system
+context: https://overlay-journal.com/submissions/00001/
+object: https://research-organisation.org/repository/review/00001
+target: https://overlay-journal.com
+...
+$: 
+  - overlay
+  - repository
+id: urn:uuid:4
+type:
+  - Announce
+  - coar-notify:EndorsementAction
+actor: https://overlay-journal.com
+origin: https://overlay-journal.com/system
+context: https://research-organisation.org/repository/preprint/201203/421/
+object: https://overlay-journal.com/articles/00001/
+target: https://research-organisation.org
+...

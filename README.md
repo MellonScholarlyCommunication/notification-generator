@@ -11,5 +11,6 @@ yarn install
 ## Run
 
 ```
-node index.js scenarios/demo1.yml output
+yarn run clean
+yarn run coar6 
 ```
