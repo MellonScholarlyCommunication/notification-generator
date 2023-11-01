@@ -75,6 +75,10 @@ function generateNotification(param) {
     const context = resolveObject(param['context']); 
     const inReplyTo = resolveNotification(param['inReplyTo']);
 
+    if (param['@context']) {
+        notification['@context'] = param['@context'];
+    }
+
     if (param['id']) {
         notification['id'] = param['id'];
     }
