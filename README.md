@@ -33,3 +33,7 @@ To add a scenario, create a YAML file in the scenarios directory. Each YAML scen
 - `inReplyTo` : identifier of a notification
 - `object` : identifier of an object defined in config/objects
 - `target` : identifier of a target defined in config/agents
+
+# LDES
+
+Each output directory will contain a `.meta` file and `ldes.jsonld` file to support Event Log experiments
