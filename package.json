@@ -6,6 +6,9 @@
   "scripts": {
     "coar1": "node index.js scenarios/coar-scenario-1.yml output",
     "coar2": "node index.js scenarios/coar-scenario-2.yml output",
+    "coar3": "node index.js scenarios/coar-scenario-3.yml output",
+    "coar4": "node index.js scenarios/coar-scenario-4.yml output",
+    "coar5": "node index.js scenarios/coar-scenario-5.yml output",
     "coar6": "node index.js scenarios/coar-scenario-6.yml output",
     "clean": "rm -rf output/*"
   },

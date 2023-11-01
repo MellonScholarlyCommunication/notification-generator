@@ -1,0 +1,14 @@
+---
+$:
+  - overlay
+  - repository
+id: urn:uuid:4-1
+type:
+  - Announce
+  - coar-notify:EndorsementAction
+actor: https://orcid.org/0000-0002-1825-0097
+origin: https://overlay-journal.com/system
+context: https://research-organisation.org/repository/preprint/201203/421/
+object: https://overlay-journal.com/articles/00001/
+target: https://research-organisation.org
+...
