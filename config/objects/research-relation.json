@@ -1,0 +1,7 @@
+{
+    "id": "urn:uuid:74FFB356-0632-44D9-B176-888DA85758DC",
+    "type": "Relationship",
+    "as:object": "https://another-research-organisation.org/repository/datasets/item/201203421/",
+    "as:relationship": "http://purl.org/vocab/frbr/core#supplement",
+    "as:subject": "https://research-organisation.org/repository/item/201203/421/"
+}

@@ -4,12 +4,17 @@
   "description": "A simple Event Notification generator",
   "main": "index.js",
   "scripts": {
+    "all": "ls scenarios/*.yml | xargs -n 1 -I {} node index.js {} output",
     "coar1": "node index.js scenarios/coar-scenario-1.yml output",
     "coar2": "node index.js scenarios/coar-scenario-2.yml output",
     "coar3": "node index.js scenarios/coar-scenario-3.yml output",
     "coar4": "node index.js scenarios/coar-scenario-4.yml output",
     "coar5": "node index.js scenarios/coar-scenario-5.yml output",
     "coar6": "node index.js scenarios/coar-scenario-6.yml output",
+    "coar7": "node index.js scenarios/coar-scenario-7.yml output",
+    "coar8": "node index.js scenarios/coar-scenario-8.yml output",
+    "coar9": "node index.js scenarios/coar-scenario-9.yml output",
+    "coar10": "node index.js scenarios/coar-scenario-10.yml output",
     "clean": "rm -rf output/*"
   },
   "author": "",

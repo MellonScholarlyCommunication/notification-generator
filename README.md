@@ -12,5 +12,5 @@ yarn install
 
 ```
 yarn run clean
-yarn run coar1 
+yarn run all
 ```

@@ -1,0 +1,14 @@
+---
+$:
+  - review
+  - aggregator
+id: urn:uuid:7-1
+type:
+  - Announce
+  - coar-notify:ReviewAction
+actor: https://review-service.com
+origin: https://review-service.com/system
+context: https://research-organisation.org/repository/preprint/201203/421/
+object: https://review-service.com/review/geo/202103/0021
+target: https://aggregator-service.org/system
+...

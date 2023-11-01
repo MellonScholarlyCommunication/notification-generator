@@ -1,0 +1,13 @@
+{
+    "id": "https://another-research-organisation.org/repository/datasets/item/201203421/",
+    "ietf:cite-as": "https://doi.org/10.5555/999555666",
+    "type": "sorg:AboutPage",
+    "url": {
+      "id": "https://another-research-organisation.org/repository/datasets/item/201203421/data_archive.zip",
+      "mediaType": "application/zip",
+      "type": [
+        "Article",
+        "sorg:Dataset"
+      ]
+    }
+}

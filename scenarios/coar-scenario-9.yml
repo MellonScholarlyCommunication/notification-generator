@@ -1,0 +1,41 @@
+---
+$:
+  - repository
+  - review
+id: urn:uuid:9-1
+type: 
+  - Offer
+  - coar-notify:ReviewAction
+actor: https://orcid.org/0000-0002-1825-0097
+origin: https://research-organisation.org/system
+object: https://research-organisation.org/repository/preprint/201203/421/
+target: https://review-service.com
+...
+$:
+  - review
+  - repository
+id: urn:uuid:9-2
+type: 
+  - Announce
+  - coar-notify:ReviewAction
+actor: https://isni.org/isni/0000000122832703
+origin: https://review-service.com/system
+context: https://research-organisation.org/repository/preprint/201203/421/
+inReplyTo: urn:uuid:9-1 
+object: https://review-service.com/review/geo/202103/0021
+target: https://research-organisation.org
+...
+$:
+  - review
+  - repository
+id: urn:uuid:9-3
+type: 
+  - Announce
+  - coar-notify:ReviewAction
+actor: https://isni:org/isni/00000001214005623
+origin: https://review-service.com/system
+context: https://research-organisation.org/repository/preprint/201203/421/
+inReplyTo: urn:uuid:9-1 
+object: https://review-service.com/review/geo/202103/0021
+target: https://research-organisation.org
+...
