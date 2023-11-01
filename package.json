@@ -15,7 +15,7 @@
     "coar8": "node index.js scenarios/coar-scenario-8.yml output",
     "coar9": "node index.js scenarios/coar-scenario-9.yml output",
     "coar10": "node index.js scenarios/coar-scenario-10.yml output",
-    "serve": "npx @solid/community-server -c @css:config/file-no-setup.json -f output",
+    "serve": "npx @solid/community-server -c config/css.json -f output",
     "clean": "rm -rf output/*"
   },
   "author": "Patrick Hochstenbach",

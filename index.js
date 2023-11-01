@@ -27,9 +27,7 @@ scenario.forEach( (scene) => {
         }
 
         dirs.forEach( (subdir) => {
-            if (! fs.existsSync(`${outputDir}/${subdir}`)) {
-                fs.mkdirSync(`${outputDir}/${subdir}`);
-            } 
+            generateDir(`${outputDir}/${subdir}`);
             const id = notification['id'].replace(/:/g,'-');
             console.error(`generating ${outputDir}/${subdir}/${id}.jsonld`);
             fs.writeFileSync(`${outputDir}/${subdir}/${id}.jsonld`, JSON.stringify(notification,null,2));
@@ -41,6 +39,16 @@ scenario.forEach( (scene) => {
 
     objects.push(notification);
 });
+
+function generateDir(dir) {
+    if (! fs.existsSync(dir)) {
+        const subdir = dir.replace(/.*\//g,'');
+        fs.mkdirSync(dir);
+        fs.writeFileSync(`${dir}/.meta`,
+        `<http://localhost:3000/${subdir}/> <https://w3id.org/ldes#EventStream> <http://localhost:30000/${subdir}/ldes.jsonld#EventStream> .`
+        );
+    }
+}
 
 function loadJsonFiles(path) {
     const res = [];
