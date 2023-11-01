@@ -15,11 +15,13 @@
     "coar8": "node index.js scenarios/coar-scenario-8.yml output",
     "coar9": "node index.js scenarios/coar-scenario-9.yml output",
     "coar10": "node index.js scenarios/coar-scenario-10.yml output",
+    "serve": "npx @solid/community-server -c @css:config/file-no-setup.json -f output",
     "clean": "rm -rf output/*"
   },
-  "author": "",
+  "author": "Patrick Hochstenbach",
   "license": "ISC",
   "dependencies": {
+    "@solid/community-server": "6.1.0",
     "uuid": "^9.0.1",
     "yaml": "^2.3.3"
   }

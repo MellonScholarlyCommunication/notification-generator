@@ -30,7 +30,7 @@ scenario.forEach( (scene) => {
             if (! fs.existsSync(`${outputDir}/${subdir}`)) {
                 fs.mkdirSync(`${outputDir}/${subdir}`);
             } 
-            const id = notification['id'];
+            const id = notification['id'].replace(/:/g,'-');
             console.error(`generating ${outputDir}/${subdir}/${id}.jsonld`);
             fs.writeFileSync(`${outputDir}/${subdir}/${id}.jsonld`, JSON.stringify(notification,null,2));
         });

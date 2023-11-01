@@ -11,8 +11,12 @@ yarn install
 ## Run
 
 ```
+# Clean the previous run
 yarn run clean
+# Generate notifications from scenarios
 yarn run all
+# In case you want a Solid endpoint to the output
+yarn run server
 ```
 
 ## Scenario
