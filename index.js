@@ -100,7 +100,7 @@ function generateDir(dir) {
         const subdir = dir.replace(/.*\//g,'');
         fs.mkdirSync(dir);
         fs.writeFileSync(`${dir}/.meta`,
-        `<http://localhost:3000/${subdir}/> <https://w3id.org/ldes#EventStream> <http://localhost:30000/${subdir}/ldes.jsonld#EventStream> .`
+        `<http://localhost:3000/${subdir}/> <https://w3id.org/ldes#EventStream> <http://localhost:3000/${subdir}/ldes.jsonld#EventStream> .`
         );
     }
 }

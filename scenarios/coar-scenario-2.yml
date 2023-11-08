@@ -35,6 +35,7 @@ type:
 actor: https://overlay-journal.com
 origin: https://overlay-journal.com/system
 context: https://research-organisation.org/repository/preprint/201203/421/
+inReplyTo: urn:uuid:2-1
 object: https://overlay-journal.com/articles/00001/
 target: https://orcid.org/0000-0002-1825-0097
 ...

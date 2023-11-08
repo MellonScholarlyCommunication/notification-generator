@@ -12,8 +12,8 @@ object: https://overlay-journal.com/submissions/00001/
 target: https://research-organisation.org
 ...
 $: 
-  - overlay
   - repository
+  - overlay
 id: urn:uuid:6-2
 type: 
   - Announce
@@ -26,15 +26,15 @@ object: https://research-organisation.org/repository/preprint/201203/421/
 target: https://overlay-journal.com
 ...
 $: 
-  - overlay
   - repository
+  - overlay
 id: urn:uuid:6-3
 type:
   - Announce
   - coar-notify:ReviewAction
 actor: https://research-organisation.org
 origin: https://research-organisation.org/system
-context: https://overlay-journal.com/submissions/00001/
+context: https://research-organisation.org/repository/preprint/201203/421/
 object: https://research-organisation.org/repository/review/00001
 target: https://overlay-journal.com
 ...
