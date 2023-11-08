@@ -2,6 +2,7 @@
 $:
   - review
   - repository
+  - 08_repository_preprint
 id: urn:uuid:8-1
 type:
   - Announce

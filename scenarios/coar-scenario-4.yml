@@ -2,6 +2,7 @@
 $:
   - overlay
   - repository
+  - 04_repository_preprint
 id: urn:uuid:4-1
 type:
   - Announce

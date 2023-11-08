@@ -37,3 +37,8 @@ To add a scenario, create a YAML file in the scenarios directory. Each YAML scen
 # LDES
 
 Each output directory will contain a `.meta` file and `ldes.jsonld` file to support Event Log experiments
+
+# Output
+
+- [01-99]* : Event log for individual artifacts hosted by data nodes in all scenarios
+- [a-z]* : Event log for all notifications of a data/service node in all scenarios

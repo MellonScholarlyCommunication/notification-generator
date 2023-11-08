@@ -2,6 +2,7 @@
 $:
   - overlay
   - repository
+  - 01_repository_preprint
 id: urn:uuid:1-1
 type:
   - Announce
@@ -15,6 +16,7 @@ target: https://research-organisation.org
 $:
   - overlay
   - repository
+  - 01_repository_preprint
 id: urn:uuid:1-2
 type:
   - Announce

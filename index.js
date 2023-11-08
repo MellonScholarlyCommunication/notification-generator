@@ -118,7 +118,7 @@ function generateNotification(param) {
 function generateDir(dir) {
     if (! fs.existsSync(dir)) {
         const subdir = dir.replace(/.*\//g,'');
-        fs.mkdirSync(dir);
+        fs.mkdirSync(dir , { recursive: true });
         fs.writeFileSync(`${dir}/.meta`,
         `<http://localhost:3000/${subdir}/> <https://w3id.org/ldes#EventStream> <http://localhost:3000/${subdir}.jsonld#EventStream> .`
         );

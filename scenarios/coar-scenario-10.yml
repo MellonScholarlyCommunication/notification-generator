@@ -2,6 +2,8 @@
 $:
   - repository
   - another-repository
+  - 10_repository_preprint
+  - 10_another-repository_dataset
 id: urn:uuid:10-1
 type: 
   - Announce

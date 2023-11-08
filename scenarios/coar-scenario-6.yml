@@ -14,6 +14,7 @@ target: https://research-organisation.org
 $: 
   - repository
   - overlay
+  - 06_repository_preprint
 id: urn:uuid:6-2
 type: 
   - Announce
@@ -28,6 +29,8 @@ target: https://overlay-journal.com
 $: 
   - repository
   - overlay
+  - 06_repository_preprint
+  - 06_repository_review
 id: urn:uuid:6-3
 type:
   - Announce
@@ -41,6 +44,7 @@ target: https://overlay-journal.com
 $: 
   - overlay
   - repository
+  - 06_repository_preprint
 id: urn:uuid:6-4
 type:
   - Announce
