@@ -2,7 +2,7 @@
 $:
   - repository
   - overlay
-  - 02_person_preprint
+  - 02_repository_preprint
 id: urn:uuid:2-1
 type:
   - Offer
@@ -15,7 +15,7 @@ target: https://overlay-journal.com
 $:
   - repository
   - overlay
-  - 02_person_preprint
+  - 02_repository_preprint
 id: urn:uuid:2-2
 type:
   - Announce
@@ -30,7 +30,7 @@ target: https://orcid.org/0000-0002-1825-0097
 $:
   - repository
   - overlay
-  - 02_person_preprint
+  - 02_repository_preprint
 id: urn:uuid:2-3
 type:
   - Announce

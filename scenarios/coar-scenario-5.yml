@@ -2,7 +2,7 @@
 $:
   - repository
   - review
-  - 05_person_preprint
+  - 05_repository_preprint
 id: urn:uuid:5-1
 type:
   - Offer
@@ -15,7 +15,7 @@ target: https://review-service.com
 $:
   - review
   - repository
-  - 05_person_preprint
+  - 05_repository_preprint
 id: urn:uuid:5-2
 type:
   - Accept
@@ -30,7 +30,7 @@ target: https://research-organisation.org
 $:
   - review
   - repository
-  - 05_person_preprint
+  - 05_repository_preprint
 id: urn:uuid:5-3
 type:
   - Announce
