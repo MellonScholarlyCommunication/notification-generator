@@ -2,6 +2,7 @@ const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
 const ldes = require('./ldes_v1');
 const YAML = require('YAML');
+const prom = require('timers/promises');
 
 const agents = loadJsonFiles('config/agents');
 const objects = loadJsonFiles('config/objects');
@@ -9,37 +10,51 @@ const objects = loadJsonFiles('config/objects');
 if (process.argv.length < 3) {
     console.error('usage: index.js scenario-file [directory]');
     process.exit(1);
-}
+};
+
+
+const sleep = t => new Promise(res => setTimeout(res, t))
 
 const scenarioFile = process.argv[2];
 const outputDir = process.argv[3];
 
 const scenario = YAML.parseAllDocuments(fs.readFileSync(scenarioFile, 'utf8'));
 
-scenario.forEach( (scene) => {
-    const sceneJS = scene.toJS();
-    const notification = generateNotification(sceneJS);
+doit();
 
-    if (outputDir) {
-        let dirs = ['data','service'];
+async function doit() {
+    for (let s = 0 ; s < scenario.length ; s++) {
+        const scene = scenario[s];
+        const sceneJS = scene.toJS();
+        const notification = generateNotification(sceneJS);
 
-        if (sceneJS['$']) {
-            dirs = sceneJS['$'] instanceof Array ? sceneJS['$'] : [sceneJS['$']]; 
+        if (outputDir) {
+            let dirs = ['data','service'];
+
+            if (sceneJS['$']) {
+                dirs = sceneJS['$'] instanceof Array ? sceneJS['$'] : [sceneJS['$']]; 
+            }
+
+            for (let i = 0 ; i < dirs.length ; i++) {
+                const subdir = dirs[i];
+
+                generateDir(`${outputDir}/${subdir}`);
+                const id = notification['id'].replace(/:/g,'-');
+
+                await prom.setTimeout(500);
+                console.error(`waiting 500ms`);
+
+                console.error(`generating ${outputDir}/${subdir}/${id}.jsonld`);
+                fs.writeFileSync(`${outputDir}/${subdir}/${id}.jsonld`, JSON.stringify(notification,null,2));
+            }
+        }
+        else {
+            console.log(JSON.stringify(notification,null,2));
         }
 
-        dirs.forEach( (subdir) => {
-            generateDir(`${outputDir}/${subdir}`);
-            const id = notification['id'].replace(/:/g,'-');
-            console.error(`generating ${outputDir}/${subdir}/${id}.jsonld`);
-            fs.writeFileSync(`${outputDir}/${subdir}/${id}.jsonld`, JSON.stringify(notification,null,2));
-        });
+        objects.push(notification);
     }
-    else {
-        console.log(JSON.stringify(notification,null,2));
-    }
-
-    objects.push(notification);
-});
+}
 
 ldes.generateLDES(outputDir);
 
