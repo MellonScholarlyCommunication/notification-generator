@@ -27,7 +27,8 @@ function _generateLDES(dir) {
             "ldp" : "http://www.w3.org/ns/ldp#",
             "dc" : "http://purl.org/dc/elements/1.1/",
             "ov" : "http://open.vocab.org/terms/",
-            "tree:member": { "@container": "@list"}
+            "tree:member": { "@container": "@list"} ,
+            "tree:node": { "@type" : "@id" }
          } ,
          "@id": `${id}#EventStream`,
          "@type": [ 
