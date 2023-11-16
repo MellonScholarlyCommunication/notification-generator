@@ -35,15 +35,16 @@ function _generateLDES(dir) {
             "evt:EventLog" 
          ],
          "tree:view" : {
-            "@id": `${id}#View`,
-            "@type": [ "tree:Node" , "tree:ViewDescription" ],
+            "@type": "tree:Node" ,
+            "tree:viewDescription": {
+                "@type": "tree:ViewDescription" ,
+                "ldes:managedBy": {
+                    "@type": "ldes:LDESinLDPClient" 
+                }
+            },
             "tree:relation" : {
-                "@id": `${id}#RelationShip`,
                 "@type": "tree:GreaterThanOrEqualToRelation" ,
                 "tree:node" : `http://localhost:3000/${subdir}/`
-            } ,
-            "ldes:managedBy": {
-                "@type": "ldes:LDESinLDPClient" 
             }
          }
     };
