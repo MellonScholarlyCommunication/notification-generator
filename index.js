@@ -142,10 +142,11 @@ function generateDir(dir) {
     if (! fs.existsSync(dir)) {
         const subdir = dir.replace(/.*\//g,'');
         fs.mkdirSync(dir , { recursive: true });
-        fs.writeFileSync(`${dir}/.meta`,
-        `${baseUrl}/${subdir}/> <https://w3id.org/ldes#EventStream> <${baseUrl}/${subdir}.jsonld#EventStream> .`
-        );
     }
+
+    fs.writeFileSync(`${dir}/.meta`,
+        `${baseUrl}/${subdir}/> <https://w3id.org/ldes#EventStream> <${baseUrl}/${subdir}.jsonld#EventStream> .`
+    );
 }
 
 function resolveAgent(id) {
