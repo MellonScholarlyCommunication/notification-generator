@@ -5,17 +5,18 @@ const YAML = require('yaml');
 const prom = require('timers/promises');
 const commander = require('commander');
 
-
 commander
     .version('1.0.0','-v, --version')
     .argument('<scenario>')
     .argument('[<directory]')
+    .option('-b, --baseUrl <url>', 'Solid base url', 'http://localhost:3000')
     .option('-c, --config <directory>', 'Configuration directory', __dirname + '/config')
     .parse(process.argv);
 
 const options = commander.opts();
 
-const agents = loadJsonFiles(options.config + '/agents');
+const baseUrl = options.baseUrl; 
+const agents  = loadJsonFiles(options.config + '/agents');
 const objects = loadJsonFiles(options.config + '/objects');
 
 const sleep = t => new Promise(res => setTimeout(res, t))
@@ -142,7 +143,7 @@ function generateDir(dir) {
         const subdir = dir.replace(/.*\//g,'');
         fs.mkdirSync(dir , { recursive: true });
         fs.writeFileSync(`${dir}/.meta`,
-        `<http://localhost:3000/${subdir}/> <https://w3id.org/ldes#EventStream> <http://localhost:3000/${subdir}.jsonld#EventStream> .`
+        `${baseUrl}/${subdir}/> <https://w3id.org/ldes#EventStream> <${baseUrl}/${subdir}.jsonld#EventStream> .`
         );
     }
 }
