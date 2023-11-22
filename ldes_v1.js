@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-exports.generateLDES = function (dir) {
+exports.generateLDES = function (dir,baseUrl) {
     console.log(`generating ldes for ${dir}...`);
 
     fs.readdir(dir, (err,files) => {
@@ -10,16 +10,16 @@ exports.generateLDES = function (dir) {
         files.forEach( (file) => {
             const stats = fs.statSync(`${dir}/${file}`);
             if (stats.isDirectory() && file.match(/^[A-Za-z0-9]/)) {
-                _generateLDES(`${dir}/${file}`);
+                _generateLDES(`${dir}/${file}`,baseUrl);
             }
         });
     });
 }
 
-function _generateLDES(dir) {
+function _generateLDES(dir,baseUrl) {
     const path = dir.replace('\/[^\/]+$','');
     const subdir = dir.replace(/.*\//g,'');
-    const id = `http://localhost:3000/${subdir}.jsonld`;
+    const id = `${baseUrl}/${subdir}.jsonld`;
     const ldes = {
         "@context" : {
             "ldes" : "https://w3id.org/ldes#",
@@ -45,7 +45,7 @@ function _generateLDES(dir) {
             },
             "tree:relation" : {
                 "@type": "tree:GreaterThanOrEqualToRelation" ,
-                "tree:node" : `http://localhost:3000/${subdir}/`
+                "tree:node" : `${baseUrl}/${subdir}/`
             }
          }
     };

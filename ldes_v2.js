@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-exports.generateLDES = function (dir) {
+exports.generateLDES = function (dir,baseUrl) {
     console.log(`generating ldes for ${dir}...`);
 
     fs.readdir(dir, (err,files) => {
@@ -10,13 +10,13 @@ exports.generateLDES = function (dir) {
         files.forEach( (file) => {
             const stats = fs.statSync(`${dir}/${file}`);
             if (stats.isDirectory() && file.match(/^[A-Za-z0-9]/)) {
-                _generateLDES(`${dir}/${file}`);
+                _generateLDES(`${dir}/${file}`,baseUrl);
             }
         });
     });
 }
 
-function _generateLDES(dir) {
+function _generateLDES(dir,baseUrl) {
     const subdir = dir.replace(/.*\//g,'');
     const ldes = {
         "@context" : {
@@ -27,7 +27,7 @@ function _generateLDES(dir) {
             "ov" : "http://open.vocab.org/terms/",
             "tree:member": { "@container": "@list"}
          } ,
-         "@id": `http://localhost:3000/${subdir}/ldes.jsonld#EventStream`,
+         "@id": `${baseUrl}/${subdir}/ldes.jsonld#EventStream`,
          "@type": [ "ldes:EventStream" , "evt:EventLog" ],
          "tree:member": []
     };

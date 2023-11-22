@@ -63,7 +63,7 @@ async function doit() {
 }
 
 if (fs.existsSync(outputDir)) {
-    ldes.generateLDES(outputDir);
+    ldes.generateLDES(outputDir,baseUrl);
 }
 
 function loadJsonFiles(path) {
