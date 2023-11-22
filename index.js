@@ -1,7 +1,7 @@
 const { v4: uuidv4 } = require('uuid');
 const fs = require('fs');
 const ldes = require('./ldes_v1');
-const YAML = require('YAML');
+const YAML = require('yaml');
 const prom = require('timers/promises');
 
 const agents = loadJsonFiles('config/agents');
