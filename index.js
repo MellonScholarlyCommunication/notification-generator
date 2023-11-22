@@ -139,13 +139,14 @@ function generateNotification(param) {
 }
 
 function generateDir(dir) {
+    const subdir = dir.replace(/.*\//g,'');
+
     if (! fs.existsSync(dir)) {
-        const subdir = dir.replace(/.*\//g,'');
         fs.mkdirSync(dir , { recursive: true });
     }
 
     fs.writeFileSync(`${dir}/.meta`,
-        `${baseUrl}/${subdir}/> <https://w3id.org/ldes#EventStream> <${baseUrl}/${subdir}.jsonld#EventStream> .`
+        `<${baseUrl}/${subdir}/> <https://w3id.org/ldes#EventStream> <${baseUrl}/${subdir}.jsonld#EventStream> .`
     );
 }
 
