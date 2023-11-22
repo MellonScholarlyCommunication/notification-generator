@@ -3,20 +3,25 @@ const fs = require('fs');
 const ldes = require('./ldes_v1');
 const YAML = require('yaml');
 const prom = require('timers/promises');
+const commander = require('commander');
 
-const agents = loadJsonFiles('config/agents');
-const objects = loadJsonFiles('config/objects');
 
-if (process.argv.length < 3) {
-    console.error('usage: index.js scenario-file [directory]');
-    process.exit(1);
-};
+commander
+    .version('1.0.0','-v, --version')
+    .argument('<scenario>')
+    .argument('[<directory]')
+    .option('-c, --config <directory>', 'Configuration directory', __dirname + '/config')
+    .parse(process.argv);
 
+const options = commander.opts();
+
+const agents = loadJsonFiles(options.config + '/agents');
+const objects = loadJsonFiles(options.config + '/objects');
 
 const sleep = t => new Promise(res => setTimeout(res, t))
 
-const scenarioFile = process.argv[2];
-const outputDir = process.argv[3];
+const scenarioFile = commander.args[0]
+const outputDir = commander.args[1];
 
 const scenario = YAML.parseAllDocuments(fs.readFileSync(scenarioFile, 'utf8'));
 
@@ -28,7 +33,7 @@ async function doit() {
         const sceneJS = scene.toJS();
         const notification = generateNotification(sceneJS);
 
-        if (outputDir) {
+        if (fs.existsSync(outputDir)) {
             let dirs = ['data','service'];
 
             if (sceneJS['$']) {
@@ -56,7 +61,9 @@ async function doit() {
     }
 }
 
-ldes.generateLDES(outputDir);
+if (fs.existsSync(outputDir)) {
+    ldes.generateLDES(outputDir);
+}
 
 function loadJsonFiles(path) {
     const res = [];
