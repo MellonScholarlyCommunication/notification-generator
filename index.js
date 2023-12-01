@@ -8,9 +8,10 @@ const commander = require('commander');
 commander
     .version('1.0.0','-v, --version')
     .argument('<scenario>')
-    .argument('[<directory]')
+    .argument('[<directory>]')
     .option('-b, --baseUrl <url>', 'Solid base url', 'http://localhost:3000')
     .option('-c, --config <directory>', 'Configuration directory', __dirname + '/config')
+    .option('--ldes','Create LDES',false)
     .parse(process.argv);
 
 const options = commander.opts();
@@ -62,7 +63,8 @@ async function doit() {
     }
 }
 
-if (fs.existsSync(outputDir)) {
+if (fs.existsSync(outputDir) && options.ldes) {
+    console.error('creating ldes...');
     ldes.generateLDES(outputDir,baseUrl);
 }
 
@@ -144,10 +146,6 @@ function generateDir(dir) {
     if (! fs.existsSync(dir)) {
         fs.mkdirSync(dir , { recursive: true });
     }
-
-    fs.writeFileSync(`${dir}/.meta`,
-        `<${baseUrl}/${subdir}/> <https://w3id.org/ldes#EventStream> <${baseUrl}/${subdir}.jsonld#EventStream> .`
-    );
 }
 
 function resolveAgent(id) {
