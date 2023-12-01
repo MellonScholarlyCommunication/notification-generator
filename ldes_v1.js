@@ -45,7 +45,9 @@ function _generateLDES(dir,baseUrl) {
             },
             "tree:relation" : {
                 "@type": "tree:GreaterThanOrEqualToRelation" ,
-                "tree:node" : `${baseUrl}/${subdir}/`
+                "tree:node" : {
+                    "@id" : `${baseUrl}/${subdir}/`
+                }
             }
          }
     };
